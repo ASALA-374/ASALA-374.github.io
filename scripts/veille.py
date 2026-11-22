@@ -508,6 +508,8 @@ def cisa_advisories(entries: list, today: date) -> None:
     except Exception as e:
         log(f"Avis CISA indisponibles : {e}")
         return
+    dup = re.compile(r"Known Exploited Vulnerabilit", re.I)        # annonces KEV : déjà couvertes par le catalogue
+    entries[:] = [e for e in entries if not (e.get("source") == "CISA" and e.get("kind") != "Catalogue KEV" and dup.search(e.get("title", "")))]
     have = {e["date"] for e in entries if e.get("source") == "CISA" and e.get("kind") != "Catalogue KEV"}
     by_day: dict[str, list] = {}
     for it in root.iter("item"):
@@ -517,7 +519,7 @@ def cisa_advisories(entries: list, today: date) -> None:
             pub = parsedate_to_datetime(it.findtext("pubDate") or "").astimezone(PARIS).date()
         except Exception:
             pub = to_date(it.findtext("pubDate"))
-        if not (link and title and pub and START <= pub <= today) or pub.isoformat() in have:
+        if not (link and title and pub and START <= pub <= today) or pub.isoformat() in have or dup.search(title):
             continue
         kind = "Avis ICS" if "ics" in link.lower() else "Alerte CISA" if "/alerts/" in link else "Avis CISA"
         desc = it.findtext("description") or ""
