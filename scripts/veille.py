@@ -183,7 +183,7 @@ def short(text: str | None, n: int = 320) -> str:
     """Premier paragraphe du résumé, pour les cartes de la liste."""
     blocks = [b["x"] for b in to_blocks(text) if b["t"] != "h"]
     first = blocks[0] if blocks else ""
-    return first if len(first) <= n else first[:n].rsplit(" ", 1)[0] + "…"
+    return first if len(first) <= n else first[:n].rsplit(" ", 1)[0].rstrip(" .,;:") + "…"
 
 
 def plain(text: str | None) -> str:

@@ -296,7 +296,8 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 
 .timeline li{padding:1.3rem 1.5rem;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);transition:border-color .4s,transform .5s var(--ease)}
 .timeline li:hover{border-color:color-mix(in srgb,var(--teal) 40%,transparent);transform:translateX(4px)}
-.timeline time{font-size:.8rem;font-weight:700;color:var(--orange);text-transform:capitalize}
+.timeline time{display:inline-block;font-size:.8rem;font-weight:700;color:var(--orange)}
+.timeline time::first-letter{text-transform:uppercase}
 .timeline h3{font-size:1.1rem;line-height:1.35;margin:.3rem 0 .4rem}
 .timeline p{margin:0 0 .6rem;color:var(--muted);font-size:.94rem}
 

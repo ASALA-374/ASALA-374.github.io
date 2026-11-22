@@ -438,7 +438,7 @@
         <button class="entry" type="button" data-ref="${esc(e.ref)}">
           <time datetime="${esc(e.date)}">${esc(fmtDate(e.date))}</time>
           <h3>${esc(e.title)}</h3>
-          ${e.summary ? `<p>${esc(e.summary.length > 220 ? e.summary.slice(0, 220).replace(/\s+\S*$/, "") + "…" : e.summary)}</p>` : ""}
+          ${e.summary ? `<p>${esc(e.summary.length > 220 ? e.summary.slice(0, 220).replace(/\s+\S*$/, "").replace(/[\s.,;:…]+$/, "") + "…" : e.summary)}</p>` : ""}
           <div class="meta"><span>${esc(e.ref)}</span>${pills(e)}</div>
           <span class="entry-go" aria-hidden="true">Lire →</span>
         </button>
