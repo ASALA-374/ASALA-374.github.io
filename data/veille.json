@@ -1,4 +1,22 @@
 {
-  "updated": null,
-  "entries": []
+  "updated": "2026-11-22T19:45:32+00:00",
+  "entries": [
+    {
+      "date": "2026-11-22",
+      "title": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV), citing evidence…",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+      "source": "The Hacker News",
+      "tags": [
+        "Sécurité",
+        "Réseau",
+        "Système"
+      ],
+      "cves": [
+        "CVE-2026-129448"
+      ],
+      "score": 33,
+      "published": "2026-11-21T08:49:13+00:00"
+    }
+  ]
 }
