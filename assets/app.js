@@ -447,16 +447,18 @@
 
   /* ---------- lecteur intégré (aucun lien externe) ---------- */
   const reader = $("#reader"), rBody = $("#reader-body");
+  const renderBlocks = list => list.map(b =>
+    b.t === "h" ? `<h3>${esc(b.x)}</h3>` : b.t === "li" ? `<p class="li">${esc(b.x)}</p>` : `<p>${esc(b.x)}</p>`).join("");
   function openReader(ref) {
     const e = entries.find(x => x.ref === ref);
     if (!e) return;
-    const blocks = (e.blocks || []).map(b =>
-      b.t === "h" ? `<h3>${esc(b.x)}</h3>` : b.t === "li" ? `<p class="li">${esc(b.x)}</p>` : `<p>${esc(b.x)}</p>`).join("");
+    const blocks = renderBlocks(e.blocks || []);
     rBody.innerHTML = `
       <p class="r-kicker">${esc(e.kind || "Avis")} de sécurité · ${esc(e.ref)}</p>
       <h2 id="reader-title">${esc(e.title)}</h2>
       <div class="meta">${pills(e)}<span>Publié le ${esc(fmtDate(e.date))}</span></div>
-      ${e.summary ? `<h3>Résumé</h3><p class="r-lead">${esc(e.summary)}</p>` : ""}
+      ${(e.intro && e.intro.length) ? `<h3>Résumé</h3><div class="r-content r-intro">${renderBlocks(e.intro)}</div>`
+        : e.summary ? `<h3>Résumé</h3><p class="r-lead">${esc(e.summary)}</p>` : ""}
       ${e.risks && e.risks.length ? `<h3>Risques</h3><ul class="r-chips">${e.risks.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
       ${e.systems && e.systems.length ? `<h3>Systèmes affectés</h3><ul class="r-list">${e.systems.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
       ${blocks ? `<div class="r-content">${blocks}</div>` : ""}

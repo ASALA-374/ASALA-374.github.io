@@ -1,27 +1,23 @@
-name: Veille quotidienne + déploiement
+name: Veille quotidienne
 
+# Chaque matin, récupère les bulletins du CERT-FR et met à jour data/veille.json.
+# Le site est republié automatiquement par GitHub Pages à chaque commit sur main.
 on:
   schedule:
     - cron: "15 5 * * *"      # tous les jours à 05:15 UTC (≈ 6h15 / 7h15 heure de Paris)
   workflow_dispatch:           # bouton "Run workflow" pour lancer à la main
-  push:
-    branches: [main]           # redéploie le site à chaque modification
 
 permissions:
   contents: write              # pour enregistrer data/veille.json dans le dépôt
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: veille
   cancel-in-progress: false
 
 jobs:
-  veille-et-deploiement:
+  veille:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -29,24 +25,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Récupérer la news du jour
-        if: github.event_name != 'push'
+      - name: Récupérer les bulletins CERT-FR
         run: python scripts/veille.py
 
       - name: Enregistrer l'historique de veille
-        if: github.event_name != 'push'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/veille.json
-          git diff --staged --quiet || git commit -m "veille: news du $(TZ=Europe/Paris date +%F)"
+          git diff --staged --quiet || git commit -m "veille: mise à jour du $(TZ=Europe/Paris date +%F)"
           git push
-
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - id: deployment
-        uses: actions/deploy-pages@v4

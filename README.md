@@ -18,15 +18,15 @@ L'onglet **veille** se met à jour tout seul chaque matin grâce à GitHub Actio
 │   └── tableau-synthese.pdf    ← À AJOUTER (tableau de synthèse E5)
 ├── data/veille.json            ← historique de veille (rempli automatiquement)
 ├── scripts/veille.py           ← script de veille (Python, sans dépendance)
-└── .github/workflows/veille.yml← exécution quotidienne + mise en ligne
+└── .github/workflows/veille.yml← exécution quotidienne de la veille
 ```
 
 ## Mise en ligne (GitHub Pages, gratuit) — 5 minutes
 
 1. Crée un dépôt public sur GitHub (ex. `portfolio`) et envoie-y tous les fichiers
    (y compris le dossier caché `.github`).
-2. Dans le dépôt : **Settings → Pages → Build and deployment → Source : GitHub Actions**.
-3. Onglet **Actions** → workflow « Veille quotidienne + déploiement » → **Run workflow**.
+2. Dans le dépôt : **Settings → Pages → Build and deployment → Source : Deploy from a branch**, branche `main`, dossier `/ (root)`.
+3. Onglet **Actions** → workflow « Veille quotidienne » → **Run workflow**.
    La première news apparaît et le site est en ligne sur `https://<ton-pseudo>.github.io/portfolio/`.
 4. Ensuite, tout est automatique : chaque matin vers 6-7h, une nouvelle news est ajoutée.
 

@@ -145,7 +145,7 @@ class _Blocks(HTMLParser):
 def to_blocks(text: str | None) -> list[dict]:
     if not text:
         return []
-    if re.search(r"<(p|br|li|ul|h\d|div|a|strong|em)\b", text, re.I):
+    if re.search(r"<(p|br|li|ul|ol|h\d|div|table)\b", text, re.I):          # HTML structuré
         parser = _Blocks()
         parser.feed(text); parser.flush()
         return parser.blocks
@@ -160,6 +160,7 @@ def to_blocks(text: str | None) -> list[dict]:
     for raw in html.unescape(text).splitlines():
         line = raw.strip()
         line = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)        # [texte](lien) -> texte
+        line = re.sub(r"<[^>]+>", "", line)                         # balises isolées (<code>...)
         line = re.sub(r"[*_`]{1,3}", "", line)
         if not line:
             push_para(); continue
@@ -173,6 +174,13 @@ def to_blocks(text: str | None) -> list[dict]:
             para.append(line)
     push_para()
     return blocks
+
+
+def short(text: str | None, n: int = 320) -> str:
+    """Premier paragraphe du résumé, pour les cartes de la liste."""
+    blocks = [b["x"] for b in to_blocks(text) if b["t"] != "h"]
+    first = blocks[0] if blocks else ""
+    return first if len(first) <= n else first[:n].rsplit(" ", 1)[0] + "…"
 
 
 def plain(text: str | None) -> str:
@@ -202,7 +210,7 @@ COMPILED = [(re.compile(p, re.I), pts, theme) for p, pts, theme in KEYWORDS]
 
 
 def score(item: dict) -> tuple[int, list[str]]:
-    text = " ".join([item["title"], item["title"], item["summary"], " ".join(item["risks"]),
+    text = " ".join([item["title"], item["title"], " ".join(b["x"] for b in item.get("intro", [])), " ".join(item["risks"]),
                      " ".join(item["systems"]), " ".join(b["x"] for b in item["blocks"][:12])])
     pts, themes = 0, {}
     for rx, p, theme in COMPILED:
@@ -237,7 +245,8 @@ def normalize(kind: str, d: dict) -> dict | None:
         "ref": d.get("reference", ""),
         "kind": kind,
         "title": plain(d.get("title")),
-        "summary": plain(d.get("summary")),
+        "summary": short(d.get("summary")),
+        "intro": to_blocks(d.get("summary"))[:30],
         "risks": [plain(r.get("description")) for r in (d.get("risks") or []) if isinstance(r, dict) and r.get("description")],
         "systems": [s for s in systems if s][:25],
         "blocks": to_blocks(d.get("content"))[:60],
@@ -265,7 +274,7 @@ def main() -> int:
     today = now.astimezone(PARIS).date()
     data = load_data()
     # on ne garde que les entrées CERT-FR complètes (migration de l'ancien format)
-    entries = [e for e in data.get("entries", []) if e.get("ref") and e.get("blocks") is not None]
+    entries = [e for e in data.get("entries", []) if e.get("ref") and e.get("intro") is not None]
     have = {e["date"] for e in entries}
     checked = to_date(data.get("checked_until")) or (START - timedelta(days=1))
     if "--full" in sys.argv:

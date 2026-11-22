@@ -283,6 +283,7 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 .r-content p.li{padding-left:1.2rem;position:relative}
 .r-content p.li::before{content:"";position:absolute;left:.2rem;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--pink)}
 .r-content h3{color:var(--teal)}
+.r-intro p:first-child{font-size:1.08rem}
 .r-chips{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0;padding:0}
 .r-chips li{font-size:.85rem;padding:.35rem .8rem;border-radius:999px;background:color-mix(in srgb,var(--pink) 14%,transparent);color:var(--text)}
 .r-chips.cve li{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;background:color-mix(in srgb,var(--gold) 14%,transparent)}
