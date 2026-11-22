@@ -34,27 +34,19 @@ L'onglet **veille** se met à jour tout seul chaque matin grâce à GitHub Actio
 
 ## Comment fonctionne la veille
 
-`scripts/veille.py` lit les flux RSS de sources reconnues :
+`scripts/veille.py` interroge l'API publique officielle du **CERT-FR** (ANSSI) : `/avis/json/` et `/alerte/json/`.
+Les contenus du CERT-FR sont publiés sous **Licence Ouverte 2.0 (Etalab)** : ils peuvent être republiés
+intégralement en citant la source, ce qui permet de lire chaque bulletin en entier directement sur le site.
 
-| Source | Type |
-|---|---|
-| CERT-FR (alertes, actualités, avis) — ANSSI | institutionnel FR |
-| BleepingComputer, The Hacker News | cybersécurité (EN) |
-| LeMagIT, Le Monde Informatique, Next | IT / réseau (FR) |
+À chaque exécution, le script :
+1. récupère les bulletins publiés depuis le **1er octobre 2026** (il rattrape tout seul les jours manquants) ;
+2. calcule un score d'importance : alerte > avis, exécution de code à distance, exploitation active,
+   équipements réseau (Cisco, Fortinet…), Microsoft / Active Directory, nombre de CVE… ;
+3. garde le bulletin le plus important de chaque jour, avec son contenu complet, dans `data/veille.json`.
 
-Puis il :
-1. garde les articles des **36 dernières heures** ;
-2. ignore ceux qui ne parlent ni réseau, ni sécurité, ni systèmes ;
-3. calcule un **score d'importance** : poids de la source (CERT-FR > presse) + mots-clés
-   (zero-day, « activement exploitée », critique, CVE, Fortinet, Cisco, VPN, PHP, Active Directory…) + fraîcheur ;
-4. publie l'article au meilleur score dans `data/veille.json` (sans doublon, 120 jours d'historique).
-
-Pour ajouter une source ou un mot-clé : modifie les listes `FEEDS` et `KEYWORDS` en haut du script.
-Si une source est en panne ou change d'adresse, elle est simplement ignorée (visible dans les logs de l'onglet Actions).
-
-Tester en local : `python scripts/veille.py` (ou `--force` pour remplacer la news du jour).
-Voir le site en local : `python -m http.server` puis http://localhost:8000
-(ouvrir `index.html` directement par double-clic empêche le chargement de la veille).
+Les jours sans publication (week-ends, jours fériés) n'ont pas d'entrée.
+Pour ajuster la sélection : modifie la liste `KEYWORDS` en haut du script.
+Pour tout reconstruire depuis le 1er octobre : `python scripts/veille.py --full`.
 
 ## À personnaliser
 

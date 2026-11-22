@@ -123,7 +123,7 @@
     views.forEach(v => { v.hidden = v.dataset.view !== route; });
     links.forEach(a => a.dataset.route === route ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
     moveInk();
-    document.title = (route === "accueil" ? "" : route[0].toUpperCase() + route.slice(1) + " · ") + "Kevin Haroutunian · BTS SIO SISR";
+    document.title = (route === "accueil" ? "" : route[0].toUpperCase() + route.slice(1) + " | ") + "Kevin Haroutunian | BTS SIO (option SISR)";
     window.scrollTo({ top: 0, behavior: "instant" });
     const view = $(`[data-view="${route}"]`);
     paintGradients();
@@ -235,7 +235,7 @@
     trailer.hidden = false;
     document.body.style.overflow = "hidden";
     const cards = $$(".tr-card", trailer), flash = $(".tr-flash", trailer), bar = $(".tr-progress i", trailer);
-    const holds = [650, 420, 560, 850, 950];
+    const holds = [650, 420, 650, 650, 850, 950];
     const totalT = 400 + holds.reduce((a, b) => a + b + 340, 0) + 650;
     bar.animate([{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }], { duration: totalT, easing: "linear", fill: "forwards" });
     let stopped = false;
@@ -367,17 +367,18 @@
   });
 
   /* =========================================================
-     8. Veille technologique (data/veille.json, mise à jour chaque jour)
+     8. Veille technologique : bulletins CERT-FR lisibles sur le site
      ========================================================= */
   let veilleLoaded = false, entries = [], filter = "Tous";
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const safeUrl = u => /^https?:\/\//i.test(u || "") ? u : "#";
   const fmtDate = iso => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const fmtMonth = iso => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
   const todayParis = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(new Date());
   const pillClass = t => ({ "Sécurité": "sec", "Réseau": "net", "Système": "sys" }[t] || "");
   const pills = e => [
+    `<span class="pill kind ${e.kind === "Alerte" ? "alert" : ""}">${esc(e.kind || "Avis")}</span>`,
     ...(e.tags || []).map(t => `<span class="pill ${pillClass(t)}">${esc(t)}</span>`),
-    ...(e.cves || []).slice(0, 3).map(c => `<span class="pill cve">${esc(c)}</span>`)
+    e.cves && e.cves.length ? `<span class="pill cve">${e.cves.length} CVE</span>` : ""
   ].join("");
 
   async function loadVeille() {
@@ -385,26 +386,30 @@
       const res = await fetch("data/veille.json", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
-      entries = (data.entries || []).sort((a, b) => b.date.localeCompare(a.date));
-      $("#veille-meta").textContent = data.updated
-        ? `Dernière exécution du script : ${new Date(data.updated).toLocaleString("fr-FR", { timeZone: "Europe/Paris" })}` : "";
+      entries = (data.entries || []).filter(e => e.ref).sort((a, b) => b.date.localeCompare(a.date));
+      $("#veille-meta").textContent =
+        `${entries.length} bulletins depuis le ${fmtDate(data.start || "2026-10-01")}. Source : CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0.` +
+        (data.updated ? ` Dernière mise à jour : ${new Date(data.updated).toLocaleString("fr-FR", { timeZone: "Europe/Paris" })}.` : "");
       renderFeatured(); renderFilters(); renderList();
     } catch {
       $("#veille-today").innerHTML = `<p class="muted">Impossible de charger la veille pour le moment.</p>`;
     }
   }
+
   function renderFeatured() {
     const box = $("#veille-today"), e = entries[0];
-    if (!e) { box.innerHTML = `<p class="muted">La première actualité apparaîtra après la prochaine exécution automatique du script.</p>`; return; }
+    if (!e) { box.innerHTML = `<p class="muted">Les bulletins apparaîtront après la prochaine exécution automatique du script.</p>`; return; }
     box.innerHTML = `
       <article class="featured rv">
-        <span class="label">${e.date === todayParis() ? "À LA UNE AUJOURD'HUI" : "DERNIÈRE ACTU"}</span>
-        <h2><a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(e.title)}</a></h2>
+        <span class="label">${e.date === todayParis() ? "À LA UNE AUJOURD'HUI" : "DERNIER BULLETIN"}</span>
+        <h2>${esc(e.title)}</h2>
         ${e.summary ? `<p>${esc(e.summary)}</p>` : ""}
-        <div class="meta"><span>${esc(fmtDate(e.date))}</span><span>·</span><span>${esc(e.source)}</span>${pills(e)}</div>
+        <div class="meta"><span>${esc(fmtDate(e.date))}</span><span>·</span><span>${esc(e.ref)}</span>${pills(e)}</div>
+        <button class="btn read" type="button" data-ref="${esc(e.ref)}">Lire le bulletin</button>
       </article>`;
     watch(box);
   }
+
   function renderFilters() {
     const tags = ["Tous", ...new Set(entries.flatMap(e => e.tags || []))];
     const box = $("#veille-filters");
@@ -417,18 +422,59 @@
       renderList();
     };
   }
+
   function renderList() {
     const list = $("#veille-list");
     const items = entries.slice(1).filter(e => filter === "Tous" || (e.tags || []).includes(filter));
-    list.innerHTML = items.length ? items.map(e => `
+    let month = "", html = "";
+    items.forEach(e => {
+      const m = fmtMonth(e.date);
+      if (m !== month) { month = m; html += `<li class="month rv" aria-hidden="true">${esc(m)}</li>`; }
+      html += `
       <li class="rv">
-        <time datetime="${esc(e.date)}">${esc(fmtDate(e.date))}</time>
-        <h3><a href="${esc(safeUrl(e.link))}" target="_blank" rel="noopener">${esc(e.title)}</a></h3>
-        ${e.summary ? `<p>${esc(e.summary)}</p>` : ""}
-        <div class="meta"><span>${esc(e.source)}</span>${pills(e)}</div>
-      </li>`).join("") : `<li class="rv"><p class="muted">Rien à afficher pour l'instant.</p></li>`;
+        <button class="entry" type="button" data-ref="${esc(e.ref)}">
+          <time datetime="${esc(e.date)}">${esc(fmtDate(e.date))}</time>
+          <h3>${esc(e.title)}</h3>
+          ${e.summary ? `<p>${esc(e.summary.length > 220 ? e.summary.slice(0, 220).replace(/\s+\S*$/, "") + "…" : e.summary)}</p>` : ""}
+          <div class="meta"><span>${esc(e.ref)}</span>${pills(e)}</div>
+          <span class="entry-go" aria-hidden="true">Lire →</span>
+        </button>
+      </li>`;
+    });
+    list.innerHTML = html || `<li class="rv"><p class="muted">Rien à afficher pour l'instant.</p></li>`;
     watch(list);
   }
+
+  /* ---------- lecteur intégré (aucun lien externe) ---------- */
+  const reader = $("#reader"), rBody = $("#reader-body");
+  function openReader(ref) {
+    const e = entries.find(x => x.ref === ref);
+    if (!e) return;
+    const blocks = (e.blocks || []).map(b =>
+      b.t === "h" ? `<h3>${esc(b.x)}</h3>` : b.t === "li" ? `<p class="li">${esc(b.x)}</p>` : `<p>${esc(b.x)}</p>`).join("");
+    rBody.innerHTML = `
+      <p class="r-kicker">${esc(e.kind || "Avis")} de sécurité · ${esc(e.ref)}</p>
+      <h2 id="reader-title">${esc(e.title)}</h2>
+      <div class="meta">${pills(e)}<span>Publié le ${esc(fmtDate(e.date))}</span></div>
+      ${e.summary ? `<h3>Résumé</h3><p class="r-lead">${esc(e.summary)}</p>` : ""}
+      ${e.risks && e.risks.length ? `<h3>Risques</h3><ul class="r-chips">${e.risks.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
+      ${e.systems && e.systems.length ? `<h3>Systèmes affectés</h3><ul class="r-list">${e.systems.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
+      ${blocks ? `<div class="r-content">${blocks}</div>` : ""}
+      ${e.cves && e.cves.length ? `<h3>Vulnérabilités (CVE)</h3><ul class="r-chips cve">${e.cves.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+      ${e.revisions && e.revisions.length ? `<h3>Historique</h3><ul class="r-list">${e.revisions.map(r => `<li>${esc(fmtDate(r.date))} : ${esc(r.x)}</li>`).join("")}</ul>` : ""}
+      <p class="r-source">Source : CERT-FR (ANSSI), bulletin ${esc(e.ref)}. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).</p>`;
+    reader.showModal();
+    rBody.scrollTop = 0;
+    document.body.style.overflow = "hidden";
+    if (!RM) reader.animate([{ opacity: 0, transform: "translateY(30px) scale(.98)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: EXPO });
+  }
+  reader.addEventListener("close", () => { document.body.style.overflow = ""; });
+  reader.addEventListener("click", e => { if (e.target === reader) reader.close(); });   // clic sur le fond
+  $("#reader-close").addEventListener("click", () => reader.close());
+  document.addEventListener("click", e => {
+    const b = e.target.closest?.("[data-ref]");
+    if (b) openReader(b.dataset.ref);
+  });
 
   /* ---------- démarrage ---------- */
   $("#year").textContent = new Date().getFullYear();
