@@ -1,52 +1,16 @@
 {
- "updated": "2026-11-22T20:32:26+00:00",
+ "updated": "2026-11-22T20:36:07+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
  "checked_until": "2026-11-21",
  "log": [
-  "Période analysée : 2026-10-01 → 2026-11-22",
+  "Période analysée : 2026-11-22 → 2026-11-22",
   "Alerte : 401 bulletins listés",
   "Avis : 17974 bulletins listés",
-  "364 bulletins détaillés, 361 dans la période",
-  "  2026-10-01 [ 21] CERTFR-2026-AVI-1246 Vulnérabilité dans Cisco Catalyst SD-WAN",
-  "  2026-10-02 [ 28] CERTFR-2026-AVI-1256 Multiples vulnérabilités dans les produits IBM",
-  "  2026-10-05 [ 23] CERTFR-2026-AVI-1263 Vulnérabilité dans Citrix NetScaler ADC et Gateway",
-  "  2026-10-06 [ 24] CERTFR-2026-AVI-1265 Multiples vulnérabilités dans Google Android",
-  "  2026-10-07 [ 36] CERTFR-2026-AVI-1277 Multiples vulnérabilités dans les produits HPE Aruba Networking",
-  "  2026-10-08 [ 38] CERTFR-2026-AVI-1282 Multiples vulnérabilités dans les produits Cisco",
-  "  2026-10-09 [ 30] CERTFR-2026-AVI-1291 Multiples vulnérabilités dans les produits IBM",
-  "  2026-10-12 [ 34] CERTFR-2026-ALE-012 Incident de sécurité ciblant les contrôleurs à distance des installations de réf",
-  "  2026-10-13 [ 30] CERTFR-2026-AVI-1298 Multiples vulnérabilités dans les produits Siemens",
-  "  2026-10-14 [ 73] CERTFR-2026-ALE-013 [MàJ] Multiples vulnérabilités dans Ivanti Connect Secure (ICS)",
-  "  2026-10-15 [ 40] CERTFR-2026-AVI-1326 Multiples vulnérabilités dans les produits Palo Alto Networks",
-  "  2026-10-16 [ 29] CERTFR-2026-AVI-1334 Multiples vulnérabilités dans le noyau Linux de Red Hat",
-  "  2026-10-19 [ 30] CERTFR-2026-AVI-1341 Multiples vulnérabilités dans les produits F5",
-  "  2026-10-20 [ 14] CERTFR-2026-AVI-1344 Multiples vulnérabilités dans Mattermost Server",
-  "  2026-10-21 [ 43] CERTFR-2026-ALE-014 [Màj] Multiples vulnérabilités dans PHP",
-  "  2026-10-22 [ 34] CERTFR-2026-AVI-1360 Multiples vulnérabilités dans les produits Cisco",
-  "  2026-10-23 [ 32] CERTFR-2026-AVI-1369 Multiples vulnérabilités dans les produits HPE Aruba Networking",
-  "  2026-10-26 [ 17] CERTFR-2026-AVI-1385 Multiples vulnérabilités dans les produits VMware",
-  "  2026-10-27 [ 30] CERTFR-2026-AVI-1387 Multiples vulnérabilités dans les produits Apple",
-  "  2026-10-28 [ 33] CERTFR-2026-AVI-1399 Multiples vulnérabilités dans les produits Veeam",
-  "  2026-10-29 [ 32] CERTFR-2026-AVI-1414 Multiples vulnérabilités dans les produits Juniper Networks",
-  "  2026-10-30 [ 29] CERTFR-2026-AVI-1431 Multiples vulnérabilités dans le noyau Linux de Red Hat",
-  "  2026-11-02 [ 35] CERTFR-2026-AVI-1442 Multiples vulnérabilités dans Ivanti Connect Secure",
-  "  2026-11-03 [ 24] CERTFR-2026-AVI-1443 Multiples vulnérabilités dans Google Android",
-  "  2026-11-04 [ 32] CERTFR-2026-AVI-1451 Multiples vulnérabilités dans les produits HPE Aruba Networking",
-  "  2026-11-05 [ 42] CERTFR-2026-ALE-015 [MàJ] Vulnérabilité dans OpenSSH",
-  "  2026-11-06 [ 29] CERTFR-2026-AVI-1471 Multiples vulnérabilités dans le noyau Linux de Red Hat",
-  "  2026-11-09 [ 30] CERTFR-2026-AVI-1483 Multiples vulnérabilités dans Sonicwall SonicOS",
-  "  2026-11-10 [ 29] CERTFR-2026-AVI-1497 Multiples vulnérabilités dans les produits SAP",
-  "  2026-11-12 [ 38] CERTFR-2026-AVI-1511 Multiples vulnérabilités dans Microsoft Office",
-  "  2026-11-13 [ 29] CERTFR-2026-AVI-1536 Multiples vulnérabilités dans le noyau Linux de Red Hat",
-  "  2026-11-16 [ 26] CERTFR-2026-AVI-1542 Multiples vulnérabilités dans les produits Trend Micro",
-  "  2026-11-17 [ 22] CERTFR-2026-AVI-1553 Multiples vulnérabilités dans Typo3",
-  "  2026-11-18 [ 58] CERTFR-2026-ALE-016 Vulnérabilité dans Oracle Java SE",
-  "  2026-11-19 [ 29] CERTFR-2026-AVI-1573 Multiples vulnérabilités dans les produits Cisco",
-  "  2026-11-20 [ 36] CERTFR-2026-AVI-1598 Multiples vulnérabilités dans les produits VMware",
-  "CERT-FR : 36 jour(s) ajouté(s)",
-  "CISA KEV : 24 jour(s) ajouté(s), 24 jours avec des ajouts depuis le 2026-10-01",
-  "Avis CISA : 8 jour(s) ajouté(s)"
+  "0 bulletins détaillés, 0 dans la période",
+  "CERT-FR : 0 jour(s) ajouté(s)",
+  "CISA KEV : 0 jour(s) ajouté(s), 24 jours avec des ajouts depuis le 2026-10-01",
+  "Avis CISA : 0 jour(s) ajouté(s)"
  ],
  "entries": [
   {
@@ -259,90 +223,6 @@
    ],
    "score": 36,
    "candidates": 18
-  },
-  {
-   "date": "2026-11-20",
-   "ref": "CISA-ADDS-FOUR-KNOWN-EXPLOITED-VULNERABI",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-   "summary": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 20, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2025-42884 SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-76466 Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-123890 VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-129448 Apache Roller Deserialization of Untrusted Data Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "These types of vulnerabilities are a frequent attack vector for malicious cyber actors and pose significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2025-42884",
-    "CVE-2026-123890",
-    "CVE-2026-129448",
-    "CVE-2026-76466"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 22,
-   "tags": [
-    "Sécurité",
-    "Réseau",
-    "Système"
-   ],
-   "candidates": 1
   },
   {
    "date": "2026-11-19",
@@ -645,89 +525,6 @@
    "candidates": 4
   },
   {
-   "date": "2026-11-18",
-   "ref": "CISA-ADDS-FOUR-KNOWN-EXPLOITED-VULNERABI",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-   "summary": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 18, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2024-10441 Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-40217 BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-90436 Apache Axis Unsafe Reflection Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-90817 Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "These types of vulnerabilities are a frequent attack vector for malicious cyber actors and pose significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2024-10441",
-    "CVE-2026-40217",
-    "CVE-2026-90436",
-    "CVE-2026-90817"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 12,
-   "tags": [
-    "Sécurité",
-    "Système"
-   ],
-   "candidates": 1
-  },
-  {
    "date": "2026-11-17",
    "ref": "KEV-2026-11-17",
    "kind": "Catalogue KEV",
@@ -848,70 +645,6 @@
    ],
    "score": 22,
    "candidates": 9
-  },
-  {
-   "date": "2026-11-17",
-   "ref": "CISA-ADDS-ONE-KNOWN-EXPLOITED-VULNERABIL",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-   "summary": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 17, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-115731 Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "This type of vulnerability is a frequent attack vector for malicious cyber actors and poses significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2026-115731"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 10,
-   "tags": [
-    "Sécurité"
-   ],
-   "candidates": 13
   },
   {
    "date": "2026-11-16",
@@ -1190,77 +923,6 @@
    ],
    "score": 29,
    "candidates": 14
-  },
-  {
-   "date": "2026-11-13",
-   "ref": "CISA-ADDS-TWO-KNOWN-EXPLOITED-VULNERABIL",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
-   "summary": "CISA has added two new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 13, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added two new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-114713 UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-123039 Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "These types of vulnerabilities are a frequent attack vector for malicious cyber actors and pose significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2026-114713",
-    "CVE-2026-123039"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 16,
-   "tags": [
-    "Sécurité",
-    "Réseau"
-   ],
-   "candidates": 1
   },
   {
    "date": "2026-11-12",
@@ -1686,102 +1348,6 @@
    "candidates": 11
   },
   {
-   "date": "2026-11-10",
-   "ref": "CISA-ADDS-SIX-KNOWN-EXPLOITED-VULNERABIL",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds Six Known Exploited Vulnerabilities to Catalog",
-   "summary": "CISA has added six new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 10, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added six new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-20320 Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-111560 Barracuda Networks Multiple Products OS Command Injection Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-111793 Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-116606 Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-124194 Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-125350 Google Chromium Use-After-Free Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "These types of vulnerabilities are a frequent attack vector for malicious cyber actors and pose significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2026-111560",
-    "CVE-2026-111793",
-    "CVE-2026-116606",
-    "CVE-2026-124194",
-    "CVE-2026-125350",
-    "CVE-2026-20320"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 20,
-   "tags": [
-    "Sécurité",
-    "Réseau",
-    "Système"
-   ],
-   "candidates": 1
-  },
-  {
    "date": "2026-11-09",
    "ref": "KEV-2026-11-09",
    "kind": "Catalogue KEV",
@@ -1986,89 +1552,6 @@
    "candidates": 6
   },
   {
-   "date": "2026-11-09",
-   "ref": "CISA-ADDS-FOUR-KNOWN-EXPLOITED-VULNERABI",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-   "summary": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 09, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-102895 GPUStack Improper Authentication Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-116779 SignalWire FreeSwitch Code Injection Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-123158 OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-123218 IBM Aspera Faspex Incorrect Authorization Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "These types of vulnerabilities are a frequent attack vector for malicious cyber actors and pose significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2026-102895",
-    "CVE-2026-116779",
-    "CVE-2026-123158",
-    "CVE-2026-123218"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 14,
-   "tags": [
-    "Sécurité",
-    "Réseau"
-   ],
-   "candidates": 1
-  },
-  {
    "date": "2026-11-06",
    "ref": "KEV-2026-11-06",
    "kind": "Catalogue KEV",
@@ -2243,71 +1726,6 @@
    ],
    "score": 29,
    "candidates": 12
-  },
-  {
-   "date": "2026-11-06",
-   "ref": "CISA-ADDS-ONE-KNOWN-EXPLOITED-VULNERABIL",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-   "summary": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 06, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2026-19868 SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "This type of vulnerability is a frequent attack vector for malicious cyber actors and poses significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2026-19868"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 16,
-   "tags": [
-    "Sécurité",
-    "Réseau"
-   ],
-   "candidates": 1
   },
   {
    "date": "2026-11-05",
@@ -2509,71 +1927,6 @@
    ],
    "score": 32,
    "candidates": 14
-  },
-  {
-   "date": "2026-11-04",
-   "ref": "CISA-ADDS-ONE-KNOWN-EXPLOITED-VULNERABIL",
-   "kind": "Alerte CISA",
-   "source": "CISA",
-   "lang": "en",
-   "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-   "summary": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-   "intro": [],
-   "blocks": [
-    {
-     "t": "p",
-     "x": "Release Date",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "November 04, 2026",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog, based on evidence of active exploitation.",
-     "l": "en"
-    },
-    {
-     "t": "li",
-     "x": "CVE-2024-27834 Apple Multiple Products Improper Authentication Vulnerability",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "This type of vulnerability is a frequent attack vector for malicious cyber actors and poses significant risks to the federal enterprise.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Binding Operational Directive (BOD) 26-04: Prioritizing Security Updates Based on Risk establishes vulnerability management requirements for Federal Civilian Executive Branch (FCEB) agencies. BOD 26-04 reinforces the importance of the KEV Catalog and requires federal agencies to prioritize rapid remediation of high-risk vulnerabilities, specifically those identified by Common Vulnerabilities and Exposures (CVEs) listed in CISA’s KEV Catalog on publicly exposed assets that grant total control of the asset post-exploitation, while deferring action for lower-risk vulnerabilities. BOD 26-04 further establishes basic expectations for when agencies must check whether threat actors compromised the system before the patch was applied.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "While BOD 26-04 applies only to FCEB agencies, CISA encourages all organizations to adopt risk-based vulnerability management and prioritize remediation of KEV Catalog vulnerabilities. CISA will continue to add vulnerabilities to the catalog that meet the specified criteria.",
-     "l": "en"
-    },
-    {
-     "t": "p",
-     "x": "Aware of an exploited vulnerability not currently listed in the KEV Catalog? Submit it for potential addition through CISA’s KEV Nomination Form. Potential KEV additions must have a CVE ID, evidence of exploitation, and clear mitigation guidance.",
-     "l": "en"
-    }
-   ],
-   "risks": [],
-   "systems": [],
-   "cves": [
-    "CVE-2024-27834"
-   ],
-   "revisions": [],
-   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public.",
-   "score": 12,
-   "tags": [
-    "Sécurité",
-    "Système"
-   ],
-   "candidates": 1
   },
   {
    "date": "2026-11-03",
