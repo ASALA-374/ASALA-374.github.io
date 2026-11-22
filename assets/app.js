@@ -375,8 +375,10 @@
   const fmtMonth = iso => new Date(iso + "T12:00:00").toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
   const todayParis = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(new Date());
   const pillClass = t => ({ "Sécurité": "sec", "Réseau": "net", "Système": "sys" }[t] || "");
+  const SRC = { "CERT-FR": "src-fr", "CISA": "src-us" };
   const pills = e => [
-    `<span class="pill kind ${e.kind === "Alerte" ? "alert" : ""}">${esc(e.kind || "Avis")}</span>`,
+    `<span class="pill src ${SRC[e.source || "CERT-FR"] || ""}">${esc(e.source || "CERT-FR")}</span>`,
+    `<span class="pill kind ${/Alerte|KEV/.test(e.kind || "") ? "alert" : ""}">${esc(e.kind || "Avis")}</span>`,
     ...(e.tags || []).map(t => `<span class="pill ${pillClass(t)}">${esc(t)}</span>`),
     e.cves && e.cves.length ? `<span class="pill cve">${e.cves.length} CVE</span>` : ""
   ].join("");
@@ -386,9 +388,9 @@
       const res = await fetch("data/veille.json", { cache: "no-cache" });
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
-      entries = (data.entries || []).filter(e => e.ref).sort((a, b) => b.date.localeCompare(a.date));
+      entries = (data.entries || []).filter(e => e.ref).sort((a, b) => b.date.localeCompare(a.date) || (b.score || 0) - (a.score || 0));
       $("#veille-meta").textContent =
-        `${entries.length} bulletins depuis le ${fmtDate(data.start || "2026-10-01")}. Source : CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0.` +
+        `${entries.length} bulletins depuis le ${fmtDate(data.start || "2026-10-01")}. Sources : CERT-FR (ANSSI, Licence Ouverte 2.0) et CISA (États-Unis, domaine public).` +
         (data.updated ? ` Dernière mise à jour : ${new Date(data.updated).toLocaleString("fr-FR", { timeZone: "Europe/Paris" })}.` : "");
       renderFeatured(); renderFilters(); renderList();
     } catch {
@@ -411,7 +413,8 @@
   }
 
   function renderFilters() {
-    const tags = ["Tous", ...new Set(entries.flatMap(e => e.tags || []))];
+    const sources = [...new Set(entries.map(e => e.source || "CERT-FR"))];
+    const tags = ["Tous", ...sources, ...new Set(entries.flatMap(e => e.tags || []))];
     const box = $("#veille-filters");
     box.innerHTML = tags.map(t => `<button type="button" aria-pressed="${t === filter}" data-tag="${esc(t)}">${esc(t)}</button>`).join("");
     box.onclick = ev => {
@@ -425,7 +428,7 @@
 
   function renderList() {
     const list = $("#veille-list");
-    const items = entries.slice(1).filter(e => filter === "Tous" || (e.tags || []).includes(filter));
+    const items = entries.slice(1).filter(e => filter === "Tous" || (e.source || "CERT-FR") === filter || (e.tags || []).includes(filter));
     let month = "", html = "";
     items.forEach(e => {
       const m = fmtMonth(e.date);
@@ -447,24 +450,27 @@
 
   /* ---------- lecteur intégré (aucun lien externe) ---------- */
   const reader = $("#reader"), rBody = $("#reader-body");
-  const renderBlocks = list => list.map(b =>
-    b.t === "h" ? `<h3>${esc(b.x)}</h3>` : b.t === "li" ? `<p class="li">${esc(b.x)}</p>` : `<p>${esc(b.x)}</p>`).join("");
+  const renderBlocks = list => list.map(b => {
+    const l = b.l ? ` lang="${esc(b.l)}"` : "";
+    return b.t === "h" ? `<h3${l}>${esc(b.x)}</h3>` : b.t === "li" ? `<p class="li"${l}>${esc(b.x)}</p>` : `<p${l}>${esc(b.x)}</p>`;
+  }).join("");
   function openReader(ref) {
     const e = entries.find(x => x.ref === ref);
     if (!e) return;
     const blocks = renderBlocks(e.blocks || []);
     rBody.innerHTML = `
-      <p class="r-kicker">${esc(e.kind || "Avis")} de sécurité · ${esc(e.ref)}</p>
-      <h2 id="reader-title">${esc(e.title)}</h2>
+      <p class="r-kicker">${esc(e.source || "CERT-FR")} · ${esc(e.kind || "Avis")} · ${esc(e.ref)}</p>
+      <h2 id="reader-title"${e.source === "CISA" && e.kind !== "Catalogue KEV" ? ' lang="en"' : ""}>${esc(e.title)}</h2>
+      ${e.lang === "en" ? `<p class="r-note">Bulletin officiel en anglais, publié par l'agence américaine de cybersécurité.</p>` : ""}
       <div class="meta">${pills(e)}<span>Publié le ${esc(fmtDate(e.date))}</span></div>
-      ${(e.intro && e.intro.length) ? `<h3>Résumé</h3><div class="r-content r-intro">${renderBlocks(e.intro)}</div>`
+      ${(e.intro && e.intro.length) ? `<h3>${e.kind === "Catalogue KEV" ? "Détails" : "Résumé"}</h3><div class="r-content r-intro">${renderBlocks(e.intro)}</div>`
         : e.summary ? `<h3>Résumé</h3><p class="r-lead">${esc(e.summary)}</p>` : ""}
       ${e.risks && e.risks.length ? `<h3>Risques</h3><ul class="r-chips">${e.risks.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
       ${e.systems && e.systems.length ? `<h3>Systèmes affectés</h3><ul class="r-list">${e.systems.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
       ${blocks ? `<div class="r-content">${blocks}</div>` : ""}
       ${e.cves && e.cves.length ? `<h3>Vulnérabilités (CVE)</h3><ul class="r-chips cve">${e.cves.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
       ${e.revisions && e.revisions.length ? `<h3>Historique</h3><ul class="r-list">${e.revisions.map(r => `<li>${esc(fmtDate(r.date))} : ${esc(r.x)}</li>`).join("")}</ul>` : ""}
-      <p class="r-source">Source : CERT-FR (ANSSI), bulletin ${esc(e.ref)}. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).</p>`;
+      <p class="r-source">Source : ${esc(e.credit || `CERT-FR (ANSSI), bulletin ${e.ref}. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).`)}</p>`;
     reader.showModal();
     rBody.scrollTop = 0;
     document.body.style.overflow = "hidden";

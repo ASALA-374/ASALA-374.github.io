@@ -34,15 +34,21 @@ L'onglet **veille** se met à jour tout seul chaque matin grâce à GitHub Actio
 
 ## Comment fonctionne la veille
 
-`scripts/veille.py` interroge l'API publique officielle du **CERT-FR** (ANSSI) : `/avis/json/` et `/alerte/json/`.
-Les contenus du CERT-FR sont publiés sous **Licence Ouverte 2.0 (Etalab)** : ils peuvent être republiés
-intégralement en citant la source, ce qui permet de lire chaque bulletin en entier directement sur le site.
+`scripts/veille.py` interroge des sources officielles, toutes librement réutilisables, ce qui permet
+de lire chaque bulletin **en entier directement sur le site** (aucun lien externe) :
+
+| Source | Contenu | Licence |
+|---|---|---|
+| **CERT-FR** (ANSSI, France) | alertes et avis de sécurité, en français (API `/avis/json/`, `/alerte/json/`) | Licence Ouverte 2.0 (Etalab) |
+| **CISA** (agence américaine de cybersécurité) | catalogue **KEV** des failles activement exploitées | domaine public (CC0 hors des États-Unis) |
+| **CISA** | alertes et avis de sécurité (en anglais) | domaine public |
 
 À chaque exécution, le script :
-1. récupère les bulletins publiés depuis le **1er octobre 2026** (il rattrape tout seul les jours manquants) ;
-2. calcule un score d'importance : alerte > avis, exécution de code à distance, exploitation active,
-   équipements réseau (Cisco, Fortinet…), Microsoft / Active Directory, nombre de CVE… ;
-3. garde le bulletin le plus important de chaque jour, avec son contenu complet, dans `data/veille.json`.
+1. récupère les publications depuis le **1er octobre 2026** (il rattrape tout seul les jours manquants) ;
+2. calcule un score d'importance : alerte > avis, exploitation active, exécution de code à distance,
+   rançongiciels, équipements réseau (Cisco, Fortinet…), Microsoft / Active Directory, nombre de CVE… ;
+3. garde, pour chaque jour, le bulletin le plus important **de chaque source** dans `data/veille.json`.
+   Les avis CISA trop éloignés des sujets réseau / systèmes (par ex. automates industriels) sont ignorés.
 
 Les jours sans publication (week-ends, jours fériés) n'ont pas d'entrée.
 Pour ajuster la sélection : modifie la liste `KEYWORDS` en haut du script.

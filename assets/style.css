@@ -191,7 +191,7 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 
 /* ---------- cartes ---------- */
 .grid{display:grid;gap:1.1rem}
-.skills{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.skills{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 .projects{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .contact{grid-template-columns:1.3fr 1fr}
 .card{
@@ -265,6 +265,10 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 .entry-go{position:absolute;top:1.3rem;right:1.5rem;font-size:.82rem;font-weight:700;color:var(--gold);transition:transform .4s var(--ease)}
 .entry:hover .entry-go{transform:translateX(4px)}
 .pill.kind{background:var(--chip)}
+.pill.src{border:1px solid var(--line);background:transparent}
+.pill.src-fr{color:var(--teal)}
+.pill.src-us{color:var(--purple)}
+.r-note{font-size:.85rem;color:var(--muted);font-style:italic;margin-top:-.4rem!important}
 .pill.alert{background:color-mix(in srgb,var(--pink) 22%,transparent);color:var(--pink)}
 
 .reader{padding:0;border:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text)}
