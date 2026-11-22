@@ -30,8 +30,8 @@ jobs:
 
       - name: Enregistrer l'historique de veille
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name  "ASALA-374"
+          git config user.email "ASALA-374@users.noreply.github.com"
           git add data/veille.json
           git diff --staged --quiet || git commit -m "veille: mise à jour du $(TZ=Europe/Paris date +%F)"
           git push
