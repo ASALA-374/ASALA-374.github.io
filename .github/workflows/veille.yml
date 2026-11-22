@@ -1,0 +1,52 @@
+name: Veille quotidienne + déploiement
+
+on:
+  schedule:
+    - cron: "15 5 * * *"      # tous les jours à 05:15 UTC (≈ 6h15 / 7h15 heure de Paris)
+  workflow_dispatch:           # bouton "Run workflow" pour lancer à la main
+  push:
+    branches: [main]           # redéploie le site à chaque modification
+
+permissions:
+  contents: write              # pour enregistrer data/veille.json dans le dépôt
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  veille-et-deploiement:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Récupérer la news du jour
+        if: github.event_name != 'push'
+        run: python scripts/veille.py
+
+      - name: Enregistrer l'historique de veille
+        if: github.event_name != 'push'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/veille.json
+          git diff --staged --quiet || git commit -m "veille: news du $(TZ=Europe/Paris date +%F)"
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

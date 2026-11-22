@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kevin Haroutunian · BTS SIO SISR</title>
+  <meta name="description" content="Portfolio de Kevin Haroutunian, étudiant en BTS SIO option SISR (2e année) à Enghien-les-Bains : projets réseau, systèmes, sécurité et veille technologique.">
+  <meta name="theme-color" content="#0c0614">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffcb57'/%3E%3Cstop offset='.5' stop-color='%23ff3d8b'/%3E%3Cstop offset='1' stop-color='%238a3ffc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='system-ui,sans-serif' font-size='26' font-weight='800' fill='%230c0614'%3EKH%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    (function () {
+      var t = null; try { t = localStorage.getItem("theme"); } catch (e) {}
+      var d = document.documentElement;
+      d.dataset.theme = t === "day" ? "day" : "night";
+      d.classList.add("js");
+    })();
+  </script>
+  <script src="assets/world.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <canvas id="world" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="sky" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
+
+  <header class="topbar">
+    <nav aria-label="Navigation principale" class="nav">
+      <span class="nav-ink" aria-hidden="true"></span>
+      <a href="#accueil" data-route="accueil">Accueil</a>
+      <a href="#projets" data-route="projets">Projets</a>
+      <a href="#veille" data-route="veille">Veille</a>
+      <a href="#contact" data-route="contact">Contact</a>
+    </nav>
+    <button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Mode jour">
+      <svg class="ts-ico ts-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+      <svg class="ts-ico ts-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <span class="ts-knob" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <!-- ================= ACCUEIL ================= -->
+    <section class="view" data-view="accueil" aria-labelledby="t-accueil">
+      <div class="cine" id="cine">
+        <div class="cine-stage">
+          <svg class="cine-mask" id="cine-mask" aria-hidden="true">
+            <defs>
+              <mask id="kh-hole" maskUnits="userSpaceOnUse">
+                <rect id="mask-full" x="0" y="0" width="100%" height="100%" fill="#fff"/>
+                <g id="mask-g" fill="#000"><text id="mask-text" text-anchor="middle" vector-effect="non-scaling-stroke">KEVIN</text></g>
+              </mask>
+              <linearGradient id="mask-stroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#ff5c9d"/><stop offset="1" stop-color="#b07cff"/>
+              </linearGradient>
+            </defs>
+            <rect id="mask-bg" x="0" y="0" width="100%" height="100%" mask="url(#kh-hole)"/>
+            <g id="mask-line"><use href="#mask-text" fill="none" stroke="url(#mask-stroke)" stroke-width="1.5"/></g>
+          </svg>
+          <p class="cine-kicker" id="cine-kicker">Portfolio · BTS SIO SISR · Enghien-les-Bains</p>
+          <div class="cine-hint" id="cine-hint" aria-hidden="true"><span>Défiler</span><i></i></div>
+          <div class="cine-title" id="cine-title">
+            <p class="eyebrow" id="cine-eyebrow">BTS SIO · option SISR</p>
+            <h1 id="t-accueil" class="title">
+              <span class="split">Kevin</span>
+              <span class="split grad">Haroutunian</span>
+            </h1>
+            <p class="lead" id="cine-lead">26 ans, en 2<sup>e</sup> année de BTS SIO SISR à Enghien-les-Bains. Futur administrateur systèmes &amp; réseaux, passionné par l'infrastructure, la sécurité et l'automatisation.</p>
+          </div>
+          <div class="bars" id="bars" aria-hidden="true"><i></i><i></i></div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="track">
+          <span>Windows Server</span><span>Active Directory</span><span>Cisco IOS</span><span>VLAN</span><span>pfSense</span><span>VPN</span><span>Linux Debian</span><span>GLPI</span><span>PowerShell</span><span>Supervision</span>
+          <span>Windows Server</span><span>Active Directory</span><span>Cisco IOS</span><span>VLAN</span><span>pfSense</span><span>VPN</span><span>Linux Debian</span><span>GLPI</span><span>PowerShell</span><span>Supervision</span>
+        </div>
+      </div>
+
+      <h2 class="h2 rv">Compétences</h2>
+      <div class="grid skills">
+        <article class="card rv">
+          <span class="num">01</span>
+          <h3>Réseau</h3>
+          <ul class="chips"><li>TCP/IP</li><li>VLAN</li><li>Routage</li><li>Cisco IOS</li><li>DHCP / DNS</li></ul>
+        </article>
+        <article class="card rv">
+          <span class="num">02</span>
+          <h3>Systèmes</h3>
+          <ul class="chips"><li>Windows Server</li><li>Active Directory</li><li>GPO</li><li>Linux Debian</li><li>Virtualisation</li></ul>
+        </article>
+        <article class="card rv">
+          <span class="num">03</span>
+          <h3>Sécurité</h3>
+          <ul class="chips"><li>Pare-feu</li><li>VPN</li><li>Sauvegardes</li><li>Durcissement</li><li>Veille CERT-FR</li></ul>
+        </article>
+        <article class="card rv">
+          <span class="num">04</span>
+          <h3>Outils</h3>
+          <ul class="chips"><li>GLPI</li><li>Supervision</li><li>PowerShell</li><li>Bash</li><li>Git</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= PROJETS ================= -->
+    <section class="view" data-view="projets" aria-labelledby="t-projets" hidden>
+      <p class="eyebrow rv">Réalisations professionnelles</p>
+      <h1 class="h1" id="t-projets"><span class="split">Projets</span></h1>
+      <p class="lead rv">Projets menés en formation et en stage. Chaque fiche détaille le contexte, les étapes et les compétences mobilisées.</p>
+
+      <div class="grid projects">
+        <article class="card project rv">
+          <span class="tag">Systèmes</span>
+          <h3>Infrastructure Active Directory</h3>
+          <p>Déploiement d'un domaine Windows Server avec DNS, DHCP, unités d'organisation et stratégies de groupe.</p>
+          <ul class="chips"><li>Windows Server</li><li>AD DS</li><li>GPO</li></ul>
+          <a class="more" href="#contact">Documentation <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card project rv">
+          <span class="tag">Réseau</span>
+          <h3>Segmentation VLAN &amp; routage</h3>
+          <p>Découpage d'un réseau d'entreprise en VLAN, routage inter-VLAN et listes de contrôle d'accès.</p>
+          <ul class="chips"><li>Cisco</li><li>802.1Q</li><li>ACL</li></ul>
+          <a class="more" href="#contact">Documentation <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card project rv">
+          <span class="tag">Sécurité</span>
+          <h3>Pare-feu &amp; VPN</h3>
+          <p>Mise en place d'un pare-feu (pfSense / OPNsense), règles de filtrage, DMZ et accès distant en VPN.</p>
+          <ul class="chips"><li>pfSense</li><li>OpenVPN</li><li>DMZ</li></ul>
+          <a class="more" href="#contact">Documentation <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card project rv">
+          <span class="tag">Services</span>
+          <h3>Parc &amp; supervision</h3>
+          <p>Gestion de parc et ticketing avec GLPI, supervision des équipements et alertes.</p>
+          <ul class="chips"><li>GLPI</li><li>Zabbix</li><li>SNMP</li></ul>
+          <a class="more" href="#contact">Documentation <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="card synth rv">
+        <div>
+          <h3>Tableau de synthèse E5</h3>
+          <p>Récapitulatif des réalisations professionnelles et des compétences du référentiel.</p>
+        </div>
+        <a class="btn" href="assets/tableau-synthese.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+      </div>
+    </section>
+
+    <!-- ================= VEILLE ================= -->
+    <section class="view" data-view="veille" aria-labelledby="t-veille" hidden>
+      <p class="eyebrow rv">Mise à jour automatique chaque matin</p>
+      <h1 class="h1" id="t-veille"><span class="split">Veille</span> <span class="split grad">techno</span></h1>
+      <p class="lead rv">Un script sélectionne chaque jour l'actualité la plus importante en réseau, cybersécurité et IT, à partir de sources reconnues : CERT-FR, BleepingComputer, The Hacker News, LeMagIT…</p>
+
+      <div id="veille-today" class="today" aria-live="polite">
+        <p class="muted">Chargement de la veille…</p>
+      </div>
+
+      <div class="veille-head">
+        <h2 class="h2 rv">Historique</h2>
+        <div class="filters rv" role="group" aria-label="Filtrer par thème" id="veille-filters"></div>
+      </div>
+      <ol id="veille-list" class="timeline" role="list"></ol>
+      <p class="muted small" id="veille-meta"></p>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="view" data-view="contact" aria-labelledby="t-contact" hidden>
+      <p class="eyebrow rv">Stage, alternance, question</p>
+      <h1 class="h1" id="t-contact"><span class="split">On</span> <span class="split grad">discute&nbsp;?</span></h1>
+      <p class="lead rv">Une proposition ou une question ? Écris-moi, je réponds rapidement.</p>
+
+      <div class="grid contact">
+        <form class="card form rv" id="contact-form" data-email="kevin.haroutunian@example.com">
+          <label>Nom<input name="nom" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Message<textarea name="message" rows="6" required></textarea></label>
+          <button class="btn" type="submit">Envoyer</button>
+          <p class="muted small">Le formulaire ouvre ta messagerie avec le message pré-rempli.</p>
+        </form>
+
+        <div class="card links rv">
+          <h3>Me retrouver</h3>
+          <ul role="list">
+            <li><span class="k">Email</span><a href="mailto:kevin.haroutunian@example.com">kevin.haroutunian@example.com</a></li>
+            <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">/in/kevin-haroutunian</a></li>
+            <li><span class="k">GitHub</span><a href="https://github.com/" target="_blank" rel="noopener">github.com/kevin</a></li>
+            <li><span class="k">Lieu</span><span>Enghien-les-Bains (95)</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Kevin Haroutunian · BTS SIO SISR · <span id="year"></span></p>
+  </footer>
+  <div class="trailer" id="trailer" hidden>
+    <div class="tr-stage" aria-hidden="true">
+      <p class="tr-card"><span class="tr-sm">Enghien-les-Bains</span><span class="tr-xs">Val-d'Oise · 95</span></p>
+      <p class="tr-card"><span class="tr-lg">26 ans</span></p>
+      <p class="tr-card"><span class="tr-lg">BTS SIO <b>SISR</b></span></p>
+      <p class="tr-card tr-words"><span>Réseau.</span><span>Systèmes.</span><span>Sécurité.</span></p>
+      <p class="tr-card"><span class="tr-xs">Un portfolio de</span><span class="tr-lg tr-name">Kevin Haroutunian</span></p>
+    </div>
+    <div class="tr-flash"></div>
+    <div class="tr-progress"><i></i></div>
+    <button class="tr-skip" type="button">Passer l'intro</button>
+  </div>
+</body>
+</html>
