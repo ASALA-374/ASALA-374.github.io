@@ -1,12 +1,13 @@
 {
- "updated": "2026-11-22T22:32:08+00:00",
+ "updated": "2026-11-23T06:10:43+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
- "checked_until": "2026-11-21",
+ "checked_until": "2026-11-22",
  "log": [
-  "Période analysée : 2026-11-22 → 2026-11-22",
+  "Période analysée : 2026-11-22 → 2026-11-23",
   "Alerte : 401 bulletins listés",
   "Avis : 17974 bulletins listés",
+  "Rattrapage à partir de CERTFR-2026-AVI-0",
   "0 bulletins détaillés, 0 dans la période",
   "CERT-FR : 0 jour(s) ajouté(s)",
   "CISA KEV : 0 jour(s) ajouté(s), 24 jours avec des ajouts depuis le 2026-10-01",
