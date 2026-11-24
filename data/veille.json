@@ -1,19 +1,157 @@
 {
- "updated": "2026-11-23T06:10:43+00:00",
+ "updated": "2026-11-24T06:04:52+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
- "checked_until": "2026-11-22",
+ "checked_until": "2026-11-23",
  "log": [
-  "Période analysée : 2026-11-22 → 2026-11-23",
+  "Période analysée : 2026-11-23 → 2026-11-24",
   "Alerte : 401 bulletins listés",
-  "Avis : 17974 bulletins listés",
-  "Rattrapage à partir de CERTFR-2026-AVI-0",
-  "0 bulletins détaillés, 0 dans la période",
-  "CERT-FR : 0 jour(s) ajouté(s)",
-  "CISA KEV : 0 jour(s) ajouté(s), 24 jours avec des ajouts depuis le 2026-10-01",
+  "Avis : 17983 bulletins listés",
+  "10 bulletins détaillés, 9 dans la période",
+  "  2026-11-23 [ 18] CERTFR-2026-AVI-1607 Multiples vulnérabilités dans les produits Synology",
+  "CERT-FR : 1 jour(s) ajouté(s)",
+  "CISA KEV : 1 jour(s) ajouté(s), 25 jours avec des ajouts depuis le 2026-10-01",
   "Avis CISA : 0 jour(s) ajouté(s)"
  ],
  "entries": [
+  {
+   "date": "2026-11-23",
+   "ref": "KEV-2026-11-23",
+   "kind": "Catalogue KEV",
+   "source": "CISA",
+   "lang": "en",
+   "title": "2 failles activement exploitées : N-able, Project MONAI",
+   "summary": "La CISA a ajouté 2 vulnérabilités activement exploitées à son catalogue KEV : N-able MailAssure (CVE-2026-134624) ; Project MONAI MONAI Label (CVE-2026-133968).",
+   "intro": [
+    {
+     "t": "p",
+     "x": "Le catalogue KEV (Known Exploited Vulnerabilities) de la CISA recense les vulnérabilités dont l'exploitation par des attaquants est confirmée. Les agences fédérales américaines doivent les corriger avant la date limite indiquée ; c'est une référence mondiale pour prioriser les correctifs."
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-134624 : N-able MailAssure"
+    },
+    {
+     "t": "p",
+     "x": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 26 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-133968 : Project MONAI MONAI Label"
+    },
+    {
+     "t": "p",
+     "x": "Project MONAI MONAI Label Path Traversal Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "Project MONAI MONAI Label contains a path traversal vulnerability that allows an unauthenticated remote attacker to write arbitrary files outside the intended datastore directory, potentially resulting in remote code execution.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 26 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    }
+   ],
+   "blocks": [],
+   "risks": [
+    "Exploitation active confirmée"
+   ],
+   "systems": [
+    "N-able MailAssure",
+    "Project MONAI MONAI Label"
+   ],
+   "cves": [
+    "CVE-2026-134624",
+    "CVE-2026-133968"
+   ],
+   "revisions": [],
+   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public. Catalogue Known Exploited Vulnerabilities.",
+   "score": 44,
+   "tags": [
+    "Sécurité"
+   ],
+   "candidates": 2
+  },
+  {
+   "date": "2026-11-23",
+   "ref": "CERTFR-2026-AVI-1607",
+   "kind": "Avis",
+   "title": "Multiples vulnérabilités dans les produits Synology",
+   "summary": "De multiples vulnérabilités ont été découvertes dans les produits Synology. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+   "intro": [
+    {
+     "t": "p",
+     "x": "De multiples vulnérabilités ont été découvertes dans les produits Synology. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données."
+    }
+   ],
+   "risks": [
+    "Déni de service à distance",
+    "Exécution de code arbitraire à distance",
+    "Atteinte à l'intégrité des données",
+    "Contournement de la politique de sécurité",
+    "Atteinte à la confidentialité des données"
+   ],
+   "systems": [
+    "DSM versions 7.3 antérieures à 7.3.2-86009-6",
+    "DSM versions 7.4 antérieures à 7.4.1-90080-2"
+   ],
+   "blocks": [
+    {
+     "t": "h",
+     "x": "Solutions"
+    },
+    {
+     "t": "p",
+     "x": "Se référer au bulletin de sécurité de l'éditeur pour l'obtention des correctifs (cf. section Documentation)."
+    }
+   ],
+   "cves": [
+    "CVE-2026-120382",
+    "CVE-2026-123007"
+   ],
+   "revisions": [
+    {
+     "date": "2026-11-23",
+     "x": "Version initiale"
+    }
+   ],
+   "source": "CERT-FR",
+   "lang": "fr",
+   "credit": "CERT-FR (ANSSI), bulletin CERTFR-2026-AVI-1607. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).",
+   "tags": [
+    "Sécurité"
+   ],
+   "score": 18,
+   "candidates": 9
+  },
   {
    "date": "2026-11-20",
    "ref": "KEV-2026-11-20",
