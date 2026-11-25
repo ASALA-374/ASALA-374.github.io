@@ -1,19 +1,222 @@
 {
- "updated": "2026-11-24T06:04:52+00:00",
+ "updated": "2026-11-25T06:04:45+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
- "checked_until": "2026-11-23",
+ "checked_until": "2026-11-24",
  "log": [
-  "Période analysée : 2026-11-23 → 2026-11-24",
+  "Période analysée : 2026-11-24 → 2026-11-25",
   "Alerte : 401 bulletins listés",
-  "Avis : 17983 bulletins listés",
-  "10 bulletins détaillés, 9 dans la période",
-  "  2026-11-23 [ 18] CERTFR-2026-AVI-1607 Multiples vulnérabilités dans les produits Synology",
+  "Avis : 17990 bulletins listés",
+  "8 bulletins détaillés, 7 dans la période",
+  "  2026-11-24 [ 26] CERTFR-2026-AVI-1614 Multiples vulnérabilités dans les produits Elastic",
   "CERT-FR : 1 jour(s) ajouté(s)",
-  "CISA KEV : 1 jour(s) ajouté(s), 25 jours avec des ajouts depuis le 2026-10-01",
+  "CISA KEV : 1 jour(s) ajouté(s), 26 jours avec des ajouts depuis le 2026-10-01",
   "Avis CISA : 0 jour(s) ajouté(s)"
  ],
  "entries": [
+  {
+   "date": "2026-11-24",
+   "ref": "KEV-2026-11-24",
+   "kind": "Catalogue KEV",
+   "source": "CISA",
+   "lang": "en",
+   "title": "3 failles activement exploitées : Drupal, Idunno, Optimizely",
+   "summary": "La CISA a ajouté 3 vulnérabilités activement exploitées à son catalogue KEV : Drupal Core (CVE-2026-132165) ; Idunno AntiCsrf (CVE-2026-131914) ; Optimizely Web Experimentation (CVE-2026-132224).",
+   "intro": [
+    {
+     "t": "p",
+     "x": "Le catalogue KEV (Known Exploited Vulnerabilities) de la CISA recense les vulnérabilités dont l'exploitation par des attaquants est confirmée. Les agences fédérales américaines doivent les corriger avant la date limite indiquée ; c'est une référence mondiale pour prioriser les correctifs."
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-132165 : Drupal Core"
+    },
+    {
+     "t": "p",
+     "x": "Drupal Core Remote Code Execution Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "Drupal Core contains a not failing securely vulnerability that could allow an unauthenticated attacker to take over an existing site or execute arbitrary code via the Drupal installer. Under specific conditions, the attacker can use install.php to attempt to reinstall Drupal on the site.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 27 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-131914 : Idunno AntiCsrf"
+    },
+    {
+     "t": "p",
+     "x": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "Idunno AntiCsrf contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via object injection. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 27 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-132224 : Optimizely Web Experimentation"
+    },
+    {
+     "t": "p",
+     "x": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "Optimizely Web Experimentation contains an external control of critical state data vulnerability in its account signup flow that could allow an attacker to impersonate existing customer users and modify Project JavaScript. Successful exploitation can result in attacker-controlled JavaScript being distributed through Optimizely-hosted assets and executed in browsers visiting affected customer websites.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 27 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    }
+   ],
+   "blocks": [],
+   "risks": [
+    "Exploitation active confirmée"
+   ],
+   "systems": [
+    "Drupal Core",
+    "Idunno AntiCsrf",
+    "Optimizely Web Experimentation"
+   ],
+   "cves": [
+    "CVE-2026-132165",
+    "CVE-2026-131914",
+    "CVE-2026-132224"
+   ],
+   "revisions": [],
+   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public. Catalogue Known Exploited Vulnerabilities.",
+   "score": 47,
+   "tags": [
+    "Sécurité",
+    "Système"
+   ],
+   "candidates": 3
+  },
+  {
+   "date": "2026-11-24",
+   "ref": "CERTFR-2026-AVI-1614",
+   "kind": "Avis",
+   "title": "Multiples vulnérabilités dans les produits Elastic",
+   "summary": "De multiples vulnérabilités ont été découvertes dans les produits Elastic. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
+   "intro": [
+    {
+     "t": "p",
+     "x": "De multiples vulnérabilités ont été découvertes dans les produits Elastic. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance."
+    }
+   ],
+   "risks": [
+    "Déni de service à distance",
+    "Exécution de code arbitraire à distance",
+    "Atteinte à l'intégrité des données",
+    "Falsification de requêtes côté serveur (SSRF)",
+    "Contournement de la politique de sécurité",
+    "Atteinte à la confidentialité des données",
+    "Élévation de privilèges"
+   ],
+   "systems": [
+    "Packetbeat versions 9.4.x antérieures à 9.4.10",
+    "Elastic Agent versions 9.5.x antérieures à 9.5.7",
+    "Elasticsearch versions 9.4.x antérieures à 9.4.10",
+    "Kibana versions 9.4.x antérieures à 9.4.10",
+    "Packetbeat versions antérieures à 8.19.26",
+    "Elasticsearch versions 9.5.x antérieures à 9.5.7",
+    "Kibana versions 9.5.x antérieures à 9.5.7",
+    "Kibana versions antérieures à 8.19.26",
+    "Logstash versions 9.5.x antérieures à 9.5.7",
+    "Elastic Cloud Enterprise versions antérieures à 3.8.7",
+    "Elastic Agent versions 9.4.x antérieures à 9.4.10",
+    "Elastic Agent versions antérieures à 8.19.26",
+    "Elasticsearch versions antérieures à 8.19.26",
+    "Packetbeat versions 9.5.x antérieures à 9.5.7",
+    "Elastic Cloud Enterprise versions 4.x antérieures à 4.2.2",
+    "Logstash versions 9.4.x antérieures à 9.4.10",
+    "Logstash versions antérieures à 8.19.26"
+   ],
+   "blocks": [
+    {
+     "t": "h",
+     "x": "Solutions"
+    },
+    {
+     "t": "p",
+     "x": "Se référer au bulletin de sécurité de l'éditeur pour l'obtention des correctifs (cf. section Documentation)."
+    }
+   ],
+   "cves": [
+    "CVE-2026-133858",
+    "CVE-2026-133917",
+    "CVE-2026-133925",
+    "CVE-2026-133981",
+    "CVE-2026-82303",
+    "CVE-2026-133984",
+    "CVE-2026-114938",
+    "CVE-2026-115296",
+    "CVE-2026-129976",
+    "CVE-2026-133860",
+    "CVE-2026-133857",
+    "CVE-2026-133930",
+    "CVE-2026-133891",
+    "CVE-2026-133926",
+    "CVE-2021-44228",
+    "CVE-2026-133935",
+    "CVE-2026-115291",
+    "CVE-2026-134059",
+    "CVE-2021-44832",
+    "CVE-2026-133918",
+    "CVE-2026-133919"
+   ],
+   "revisions": [
+    {
+     "date": "2026-11-24",
+     "x": "Version initiale"
+    }
+   ],
+   "source": "CERT-FR",
+   "lang": "fr",
+   "credit": "CERT-FR (ANSSI), bulletin CERTFR-2026-AVI-1614. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).",
+   "tags": [
+    "Sécurité"
+   ],
+   "score": 26,
+   "candidates": 7
+  },
   {
    "date": "2026-11-23",
    "ref": "KEV-2026-11-23",
