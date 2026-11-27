@@ -1,19 +1,95 @@
 {
- "updated": "2026-11-26T06:04:24+00:00",
+ "updated": "2026-11-27T06:08:34+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
- "checked_until": "2026-11-25",
+ "checked_until": "2026-11-26",
  "log": [
-  "Période analysée : 2026-11-25 → 2026-11-26",
+  "Période analysée : 2026-11-26 → 2026-11-27",
   "Alerte : 401 bulletins listés",
-  "Avis : 17998 bulletins listés",
-  "9 bulletins détaillés, 8 dans la période",
-  "  2026-11-25 [ 30] CERTFR-2026-AVI-1622 Multiples vulnérabilités dans les produits VMware",
+  "Avis : 18005 bulletins listés",
+  "7 bulletins détaillés, 7 dans la période",
+  "  2026-11-26 [ 32] CERTFR-2026-AVI-1628 Multiples vulnérabilités dans HPE Aruba Networking Airwave",
   "CERT-FR : 1 jour(s) ajouté(s)",
-  "CISA KEV : 1 jour(s) ajouté(s), 27 jours avec des ajouts depuis le 2026-10-01",
+  "CISA KEV : 0 jour(s) ajouté(s), 27 jours avec des ajouts depuis le 2026-10-01",
   "Avis CISA : 0 jour(s) ajouté(s)"
  ],
  "entries": [
+  {
+   "date": "2026-11-26",
+   "ref": "CERTFR-2026-AVI-1628",
+   "kind": "Avis",
+   "title": "Multiples vulnérabilités dans HPE Aruba Networking Airwave",
+   "summary": "De multiples vulnérabilités ont été découvertes dans HPE Aruba Networking Airwave. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
+   "intro": [
+    {
+     "t": "p",
+     "x": "De multiples vulnérabilités ont été découvertes dans HPE Aruba Networking Airwave. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance."
+    }
+   ],
+   "risks": [
+    "Déni de service à distance",
+    "Injection de code indirecte à distance (XSS)",
+    "Exécution de code arbitraire à distance",
+    "Atteinte à l'intégrité des données",
+    "Injection SQL (SQLi)",
+    "Contournement de la politique de sécurité",
+    "Atteinte à la confidentialité des données",
+    "Élévation de privilèges"
+   ],
+   "systems": [
+    "Airwave versions antérieures à 8.3.0.8"
+   ],
+   "blocks": [
+    {
+     "t": "h",
+     "x": "Solutions"
+    },
+    {
+     "t": "p",
+     "x": "Se référer au bulletin de sécurité de l'éditeur pour l'obtention des correctifs (cf. section Documentation)."
+    }
+   ],
+   "cves": [
+    "CVE-2026-95796",
+    "CVE-2026-133975",
+    "CVE-2026-95794",
+    "CVE-2025-69419",
+    "CVE-2026-133971",
+    "CVE-2026-133974",
+    "CVE-2026-133976",
+    "CVE-2026-22795",
+    "CVE-2026-133973",
+    "CVE-2025-69421",
+    "CVE-2026-114406",
+    "CVE-2026-22796",
+    "CVE-2026-133977",
+    "CVE-2026-95795",
+    "CVE-2026-95797",
+    "CVE-2025-68160",
+    "CVE-2026-133972",
+    "CVE-2026-133979",
+    "CVE-2025-69418",
+    "CVE-2026-133978",
+    "CVE-2026-133980",
+    "CVE-2026-95798",
+    "CVE-2025-69420"
+   ],
+   "revisions": [
+    {
+     "date": "2026-11-26",
+     "x": "Version initiale"
+    }
+   ],
+   "source": "CERT-FR",
+   "lang": "fr",
+   "credit": "CERT-FR (ANSSI), bulletin CERTFR-2026-AVI-1628. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).",
+   "tags": [
+    "Sécurité",
+    "Réseau"
+   ],
+   "score": 32,
+   "candidates": 7
+  },
   {
    "date": "2026-11-25",
    "ref": "KEV-2026-11-25",
