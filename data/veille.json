@@ -1,19 +1,232 @@
 {
- "updated": "2026-11-27T06:08:34+00:00",
+ "updated": "2026-11-28T06:03:51+00:00",
  "source": "CERT-FR (ANSSI), contenus réutilisés sous Licence Ouverte 2.0 (Etalab)",
  "start": "2026-10-01",
- "checked_until": "2026-11-26",
+ "checked_until": "2026-11-27",
  "log": [
-  "Période analysée : 2026-11-26 → 2026-11-27",
+  "Période analysée : 2026-11-27 → 2026-11-28",
   "Alerte : 401 bulletins listés",
-  "Avis : 18005 bulletins listés",
-  "7 bulletins détaillés, 7 dans la période",
-  "  2026-11-26 [ 32] CERTFR-2026-AVI-1628 Multiples vulnérabilités dans HPE Aruba Networking Airwave",
+  "Avis : 18016 bulletins listés",
+  "11 bulletins détaillés, 11 dans la période",
+  "  2026-11-27 [ 29] CERTFR-2026-AVI-1637 Multiples vulnérabilités dans le noyau Linux de SUSE",
   "CERT-FR : 1 jour(s) ajouté(s)",
-  "CISA KEV : 0 jour(s) ajouté(s), 27 jours avec des ajouts depuis le 2026-10-01",
+  "CISA KEV : 1 jour(s) ajouté(s), 28 jours avec des ajouts depuis le 2026-10-01",
   "Avis CISA : 0 jour(s) ajouté(s)"
  ],
  "entries": [
+  {
+   "date": "2026-11-27",
+   "ref": "KEV-2026-11-27",
+   "kind": "Catalogue KEV",
+   "source": "CISA",
+   "lang": "en",
+   "title": "3 failles activement exploitées : Drupal, OSGeo",
+   "summary": "La CISA a ajouté 3 vulnérabilités activement exploitées à son catalogue KEV : Drupal Core (CVE-2026-136716) ; OSGeo GeoServer (CVE-2026-120705) ; OSGeo GeoServer (CVE-2026-129243).",
+   "intro": [
+    {
+     "t": "p",
+     "x": "Le catalogue KEV (Known Exploited Vulnerabilities) de la CISA recense les vulnérabilités dont l'exploitation par des attaquants est confirmée. Les agences fédérales américaines doivent les corriger avant la date limite indiquée ; c'est une référence mondiale pour prioriser les correctifs."
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-136716 : Drupal Core"
+    },
+    {
+     "t": "p",
+     "x": "Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "Drupal Core contains an improper check for unusual or exceptional conditions vulnerability that allows an unauthenticated remote attacker to take over a site via the exposed Drupal installer when the site is in one of the affected unusual or incomplete installation states.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 30 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-120705 : OSGeo GeoServer"
+    },
+    {
+     "t": "p",
+     "x": "OSGeo GeoServer XML Injection Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "OsGeo GeoServer contains an XML injection vulnerability that allows an unauthenticated remote attacker to cause the server to read local text files accessible to the GeoServer process or fetch attacker-specified HTTP or HTTPS URLs via a crafted ID parameter in the WFS 2.0 GetFeatureById stored query. This vulnerability can be chained with CVE-2026-129244, CVE-2026-129243, CVE-2026-129245, and CVE-2026-129242 to achieve unauthenticated remote code execution on an affected GeoServer instance.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 30 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    },
+    {
+     "t": "h",
+     "x": "CVE-2026-129243 : OSGeo GeoServer"
+    },
+    {
+     "t": "p",
+     "x": "OSGeo GeoServer Incorrect Authorization Vulnerability",
+     "l": "en"
+    },
+    {
+     "t": "p",
+     "x": "GeoServer contains an incorrect authorization vulnerability that allows an unauthenticated remote attacker to bypass service-level role checks and invoke operations protected solely by those checks via a request with a prefixed service parameter. This vulnerability can be chained with CVE-2026-129244, CVE-2026-120705, CVE-2026-129245, and CVE-2026-129242 to achieve unauthenticated remote code execution on an affected GeoServer instance.",
+     "l": "en"
+    },
+    {
+     "t": "li",
+     "x": "Action requise : Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines."
+    },
+    {
+     "t": "li",
+     "x": "Date limite de correction (agences fédérales américaines) : 30 novembre 2026"
+    },
+    {
+     "t": "li",
+     "x": "Utilisée dans des campagnes de rançongiciel : non connue à ce jour"
+    }
+   ],
+   "blocks": [],
+   "risks": [
+    "Exploitation active confirmée"
+   ],
+   "systems": [
+    "Drupal Core",
+    "OSGeo GeoServer"
+   ],
+   "cves": [
+    "CVE-2026-136716",
+    "CVE-2026-120705",
+    "CVE-2026-129243"
+   ],
+   "revisions": [],
+   "credit": "CISA (Cybersecurity and Infrastructure Security Agency, États-Unis). Œuvre du gouvernement américain, domaine public. Catalogue Known Exploited Vulnerabilities.",
+   "score": 47,
+   "tags": [
+    "Sécurité",
+    "Système"
+   ],
+   "candidates": 3
+  },
+  {
+   "date": "2026-11-27",
+   "ref": "CERTFR-2026-AVI-1637",
+   "kind": "Avis",
+   "title": "Multiples vulnérabilités dans le noyau Linux de SUSE",
+   "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de SUSE. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
+   "intro": [
+    {
+     "t": "p",
+     "x": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de SUSE. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance."
+    }
+   ],
+   "risks": [
+    "Déni de service à distance",
+    "Injection de requêtes illégitimes par rebond (CSRF)",
+    "Exécution de code arbitraire à distance",
+    "Atteinte à l'intégrité des données",
+    "Non spécifié par l'éditeur",
+    "Contournement de la politique de sécurité",
+    "Atteinte à la confidentialité des données",
+    "Élévation de privilèges"
+   ],
+   "systems": [
+    "SUSE Linux Enterprise High Performance Computing 12 SP5",
+    "SUSE Linux Enterprise Live Patching 12-SP5",
+    "SUSE Linux Enterprise Server 12 SP5",
+    "SUSE Linux Enterprise Server for SAP applications 16.0",
+    "SUSE Linux Micro 6.2",
+    "SUSE Linux Enterprise Server 16.0",
+    "SUSE Linux Enterprise Server for SAP Applications 12 SP5"
+   ],
+   "blocks": [
+    {
+     "t": "h",
+     "x": "Solutions"
+    },
+    {
+     "t": "p",
+     "x": "Se référer au bulletin de sécurité de l'éditeur pour l'obtention des correctifs (cf. section Documentation)."
+    }
+   ],
+   "cves": [
+    "CVE-2026-124934",
+    "CVE-2026-53910",
+    "CVE-2026-124940",
+    "CVE-2026-124865",
+    "CVE-2026-53613",
+    "CVE-2026-53614",
+    "CVE-2026-124860",
+    "CVE-2026-98260",
+    "CVE-2026-124942",
+    "CVE-2025-10148",
+    "CVE-2026-124907",
+    "CVE-2025-11563",
+    "CVE-2026-124919",
+    "CVE-2026-124912",
+    "CVE-2026-124868",
+    "CVE-2026-124854",
+    "CVE-2026-124924",
+    "CVE-2026-27456",
+    "CVE-2026-124894",
+    "CVE-2026-124882",
+    "CVE-2026-124903",
+    "CVE-2026-124902",
+    "CVE-2026-74688",
+    "CVE-2026-13595",
+    "CVE-2026-124863",
+    "CVE-2026-124896",
+    "CVE-2026-118024",
+    "CVE-2026-124932",
+    "CVE-2026-99999",
+    "CVE-2026-78410",
+    "CVE-2026-124914",
+    "CVE-2026-124897",
+    "CVE-2026-124855",
+    "CVE-2026-124887",
+    "CVE-2026-124935",
+    "CVE-2026-124861",
+    "CVE-2026-124917",
+    "CVE-2026-118019",
+    "CVE-2026-124886",
+    "CVE-2026-124889"
+   ],
+   "revisions": [
+    {
+     "date": "2026-11-27",
+     "x": "Version initiale"
+    }
+   ],
+   "source": "CERT-FR",
+   "lang": "fr",
+   "credit": "CERT-FR (ANSSI), bulletin CERTFR-2026-AVI-1637. Contenu réutilisé sous Licence Ouverte 2.0 (Etalab).",
+   "tags": [
+    "Sécurité",
+    "Système"
+   ],
+   "score": 29,
+   "candidates": 11
+  },
   {
    "date": "2026-11-26",
    "ref": "CERTFR-2026-AVI-1628",
